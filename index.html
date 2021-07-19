@@ -29,8 +29,9 @@
         </form>
       </section>
       <section style="text-align: center;" id="task_choosing" inactive>
-          <h2 id="task_name">Nothing</h2>
-          <h4 id="task_id">id: 0</h4>
+        <p>mathias will do today:</p>
+        <h2 id="task_name">Nothing</h2>
+        <h4 id="task_id">id: 0</h4>
       </section>
     </main>
     <footer>
@@ -118,6 +119,11 @@
     section#create_screen{
         width: 80%;
     }
+    #task_choosing > p{
+        font-size: 4vw;
+        color: white;
+        font-family: 'mathias';
+    }
     [inactive]{
         display: none !important;
         opacity: 0 !important;
@@ -135,6 +141,8 @@
     let cursor_snd = new Audio("sounds/cursor.ogg");
     let back_snd = new Audio("sounds/back.ogg");
     let random_sound = new Audio("sounds/reandomization.mp3")
+    random_sound.preservesPitch = false;
+
     let [tasklist, selected] = [{}, {}];
 
     let start_randomizing = () => {
@@ -153,8 +161,13 @@
 
         }, 60);
         setTimeout(() => {
+            if (selected.id == 0){
+                random_sound.playbackRate = .82
+                task_name.style.color = "darkgray"
+                task_id.style.color = "darkgray"
+            }
             clearInterval(interval_id)
-        }, 13240);
+        }, 12940);
         
     }
     let refresh_button = () => {

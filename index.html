@@ -74,5 +74,14 @@
     }
 </style>
 <script>
+    let cursor_snd = new Audio("sounds/cursor.ogg");
+    let back_snd = new Audio("sounds/back.ogg");
     
+    let refresh_button = () => {
+        document.querySelectorAll("button.main_button").forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                cursor_snd.cloneNode(1).play()
+            })
+        })
+    }
 </script>

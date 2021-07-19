@@ -104,7 +104,8 @@
 <script>
     let cursor_snd = new Audio("sounds/cursor.ogg");
     let back_snd = new Audio("sounds/back.ogg");
-    
+    let tasklist = {};
+
     let refresh_button = () => {
         document.querySelectorAll("button.main_button").forEach(el => {
             el.addEventListener("mouseenter", () => {
@@ -121,6 +122,14 @@
     document.onreadystatechange = function(){
         if (this.readyState == "complete"){
             refresh_button()
+            fetch("task.json")
+            .then(eh => eh.text())
+            .then(data => {
+                tasklist = JSON.parse(data)
+            })
+            .catch(rip => {
+                alert("oops,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, an error ecuted")
+            })
         }
     }
 </script>

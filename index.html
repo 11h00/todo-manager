@@ -64,6 +64,16 @@
         margin: 5px;
         text-align: center;
     }
+    #task_name{
+        font-family: mathias;
+        font-size: larger;
+        color: white;
+    }
+    #task_id{
+        font-family: mathias;
+        font-size: medium;
+        color: white;
+    }
     .main_button{
         color: white;
         background-color: black;
@@ -116,16 +126,23 @@
     
 </style>
 <script>
+    let timeout_id = 0;
     let [username, id] = ["", 0] //matashi username if he is logged
     let confirm_snd = new Audio("sounds/confirm.ogg")
     let cursor_snd = new Audio("sounds/cursor.ogg");
     let back_snd = new Audio("sounds/back.ogg");
+    let random_sound = new Audio("sounds/reandomization.mp3")
     let tasklist = {};
 
     let start_randomizing = () => {
+        
         document.querySelectorAll("section").forEach(el => {
             el.setAttribute("inactive", "true")
         })
+        timeout_id = setTimeout(() => {
+            random_sound.play()
+            document.getElementById("task_choosing").removeAttribute("inactive")
+        }, 3000);
 
     }
     let refresh_button = () => {

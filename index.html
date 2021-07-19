@@ -127,12 +127,13 @@
 </style>
 <script>
     let timeout_id = 0;
+    let interval_id = 0;
     let [username, id] = ["", 0] //matashi username if he is logged
     let confirm_snd = new Audio("sounds/confirm.ogg")
     let cursor_snd = new Audio("sounds/cursor.ogg");
     let back_snd = new Audio("sounds/back.ogg");
     let random_sound = new Audio("sounds/reandomization.mp3")
-    let tasklist = {};
+    let [tasklist, selected] = [{}, {}];
 
     let start_randomizing = () => {
         
@@ -143,7 +144,14 @@
             random_sound.play()
             document.getElementById("task_choosing").removeAttribute("inactive")
         }, 3000);
+        interval_id = setInterval(() => {
+            let selected = tasklist.tasks[Math.floor(Math.random() * tasklist.tasks.length)];
 
+        }, 300);
+        setTimeout(() => {
+            clearInterval(interval_id)
+        }, 15240);
+        
     }
     let refresh_button = () => {
         document.querySelectorAll("button.main_button").forEach(el => {
@@ -161,6 +169,9 @@
                         document.querySelector("button[ac='back']").removeAttribute("inactive")
                         start_randomizing();
                         break;
+                    case "back":
+
+                    break;
                     default: 
                         alert("Warning, this button is not bount to a existing function.");
                         break;

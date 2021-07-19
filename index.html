@@ -11,7 +11,9 @@
 </head>
 <body>
     <header>
-
+        <nav>
+            <button inactive class="main_button" ac="back">back</button>
+        </nav>
     </header>
     <main>
       <section id="main_screen">
@@ -69,6 +71,12 @@
         color: yellow;
         cursor: pointer;
     }
+    .main_button[ac="back"]{
+        margin: 10px;
+        color: red;
+        position: absolute;
+        padding: 5px 25px;
+    }
     #main_screen > article {
         display: flex;
         justify-content: space-evenly;
@@ -91,6 +99,7 @@
         opacity: 0;
         user-select: none;
     }
+    
 </style>
 <script>
     let cursor_snd = new Audio("sounds/cursor.ogg");

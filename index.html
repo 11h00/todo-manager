@@ -118,7 +118,10 @@
     let tasklist = {};
 
     let start_randomizing = () => {
-        
+        document.querySelectorAll("section").forEach(el => {
+            el.setAttribute("inactive", "true")
+        })
+
     }
     let refresh_button = () => {
         document.querySelectorAll("button.main_button").forEach(el => {
@@ -127,9 +130,16 @@
             })
             el.addEventListener("click", (item) => {
                 switch(item.currentTarget.attributes.ac.value){
-                    case "tsklst": alert("buen") ;break;
-                    case "rand": start_randomizing();break;
-                    default: alert("Warning, this button is not bount to a existing function.");break;
+                    case "tsklst": 
+                        
+                        alert("buen");
+                        break;
+                    case "rand":
+                        start_randomizing();
+                        break;
+                    default: 
+                        alert("Warning, this button is not bount to a existing function.");
+                        break;
                 }
             })
         })

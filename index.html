@@ -43,7 +43,7 @@
 <script>
     if (location.host.length == 0){
         alert("Do no open this project as local file, thank you.")
-        document.body.innerHTML = "Unable to start the app."
+        document.querySelector("html").innerHTML = "Unable to start the app."
     }
 </script>
 <script src="js/app.js"></script>

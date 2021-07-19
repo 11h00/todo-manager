@@ -20,7 +20,12 @@
                <button ac="tsklst" class="main_button">Create a task</button> 
                <button ac="rand" class="main_button">Start random choice</button>
           </article>
-      </section>  
+      </section>
+      <section id="create_screen" inactive>
+        <form action="./create/" method="post">
+            <input type="text" required maxlength="400" minlength="1" placeholder="name of the task" id="create_task">    
+        </form>
+      </section>
     </main>
     <footer>
 
@@ -72,6 +77,19 @@
     #main_screen{
         display: grid;
         grid-gap: 40px;
+    }
+    input#create_task{
+        color: white;
+        background-color: black;
+        border: white solid 2px;
+        font-size: 3vw;
+        font-family: futura;
+        padding: 10px;
+    }
+    [inactive]{
+        display: none;
+        opacity: 0;
+        user-select: none;
     }
 </style>
 <script>

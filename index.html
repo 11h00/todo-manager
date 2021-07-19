@@ -46,9 +46,11 @@
     }
     main{
         height: 100vh;
+        width: 60%;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: auto;
     }
     h1{
         font-family: futura;
@@ -94,18 +96,25 @@
         font-family: futura;
         padding: 10px;
     }
+    section#create_screen{
+        width: 80%;
+    }
     [inactive]{
-        display: none;
-        opacity: 0;
-        user-select: none;
+        display: none !important;
+        opacity: 0 !important;
+        user-select: none !important;
     }
     
 </style>
 <script>
+    let [username, id] = ["", 0] //matashi username if he is logged
     let cursor_snd = new Audio("sounds/cursor.ogg");
     let back_snd = new Audio("sounds/back.ogg");
     let tasklist = {};
 
+    let start_randomizing = () => {
+        
+    }
     let refresh_button = () => {
         document.querySelectorAll("button.main_button").forEach(el => {
             el.addEventListener("mouseenter", () => {
@@ -114,6 +123,7 @@
             el.addEventListener("click", (item) => {
                 switch(item.currentTarget.attributes.ac.value){
                     case "tsklst": alert("buen") ;break;
+                    case "rand": start_randomizing();break;
                     default: alert("Warning, this button is not bount to a existing function.");break;
                 }
             })

@@ -14,11 +14,11 @@
 
     </header>
     <main>
-      <section>
+      <section id="main_screen">
           <h1>Mathias to-do list</h1>
           <article>
-               <button>Create a task</button> 
-               <button>Start random choice</button>
+               <button class="main_button">Create a task</button> 
+               <button class="main_button">Start random choice</button>
           </article>
       </section>  
     </main>
@@ -35,9 +35,33 @@
     body{
         margin: 0;
         padding: 0;
+        background: black;
     }
     main{
         height: 100vh;
-        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        font-family: futura;
+        margin: 25px;
+        color: white;
+        font-size: 7vw;
+        margin: 5px;
+        text-align: center;
+    }
+    .main_button{
+        color: white;
+        background-color: black;
+        border: white solid 2px;
+        font-size: 3vw;
+        font-family: futura;
+        padding: 10px;
+    }
+    #main_screen > article {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
     }
 </style>

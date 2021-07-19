@@ -77,9 +77,14 @@
         color: yellow;
         cursor: pointer;
     }
+    .main_button:hover[ac="back"]{
+        border: yellow solid 2px;
+        color: yellow;
+        cursor: pointer;
+    }
     .main_button[ac="back"]{
         margin: 10px;
-        color: red;
+        color: white;
         position: absolute;
         padding: 5px 25px;
     }
@@ -130,11 +135,12 @@
             })
             el.addEventListener("click", (item) => {
                 switch(item.currentTarget.attributes.ac.value){
-                    case "tsklst": 
-                        
+                    case "tsklst":
+                        document.querySelector("button[ac='back']").removeAttribute("inactive")
                         alert("buen");
                         break;
                     case "rand":
+                        document.querySelector("button[ac='back']").removeAttribute("inactive")
                         start_randomizing();
                         break;
                     default: 

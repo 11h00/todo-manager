@@ -134,6 +134,7 @@
                 cursor_snd.cloneNode(1).play()
             })
             el.addEventListener("click", (item) => {
+                confirm_snd.cloneNode(true).play()
                 switch(item.currentTarget.attributes.ac.value){
                     case "tsklst":
                         document.querySelector("button[ac='back']").removeAttribute("inactive")

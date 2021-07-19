@@ -126,6 +126,8 @@
     
 </style>
 <script>
+    let task_id = document.getElementById("task_id");
+    let task_name = document.getElementById("task_name");
     let timeout_id = 0;
     let interval_id = 0;
     let [username, id] = ["", 0] //matashi username if he is logged
@@ -145,7 +147,7 @@
             document.getElementById("task_choosing").removeAttribute("inactive")
         }, 3000);
         interval_id = setInterval(() => {
-            let selected = tasklist.tasks[Math.floor(Math.random() * tasklist.tasks.length)];
+            selected = tasklist.tasks[Math.floor(Math.random() * tasklist.tasks.length)];
 
         }, 300);
         setTimeout(() => {

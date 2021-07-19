@@ -1,0 +1,89 @@
+@font-face {
+    font-family: mathias;
+    src: url(../futura.woff);
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+main{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+h1{
+    font-family: futura;
+    margin: 25px;
+    color: white;
+    font-size: 7vw;
+    margin: 5px;
+    text-align: center;
+}
+#task_name{
+    font-family: mathias;
+    font-size: 6vw;
+    color: white;
+}
+#task_id{
+    font-family: mathias;
+    font-size: 6vw;
+    color: wheat;
+}
+.main_button{
+    color: white;
+    background-color: black;
+    border: white solid 2px;
+    font-size: 3vw;
+    font-family: futura;
+    padding: 10px;
+}
+.main_button:hover{
+    border: yellow solid 2px;
+    color: yellow;
+    cursor: pointer;
+}
+.main_button:hover[ac="back"]{
+    border: yellow solid 2px;
+    color: yellow;
+    cursor: pointer;
+}
+.main_button[ac="back"]{
+    margin: 10px;
+    color: white;
+    position: absolute;
+    padding: 5px 25px;
+}
+#main_screen > article {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#main_screen{
+    display: grid;
+    grid-gap: 40px;
+}
+input#create_task{
+    color: white;
+    background-color: black;
+    border: white solid 2px;
+    font-size: 3vw;
+    font-family: futura;
+    padding: 10px;
+}
+section#create_screen{
+    width: 80%;
+}
+#task_choosing > p{
+    font-size: 4vw;
+    color: white;
+    font-family: 'mathias';
+}
+[inactive]{
+    display: none !important;
+    opacity: 0 !important;
+    user-select: none !important;
+}

@@ -17,8 +17,8 @@
       <section id="main_screen">
           <h1>Mathias to-do list</h1>
           <article>
-               <button class="main_button">Create a task</button> 
-               <button class="main_button">Start random choice</button>
+               <button ac="tsklst" class="main_button">Create a task</button> 
+               <button ac="rand" class="main_button">Start random choice</button>
           </article>
       </section>  
     </main>
@@ -62,6 +62,7 @@
     .main_button:hover{
         border: yellow solid 2px;
         color: yellow;
+        cursor: pointer;
     }
     #main_screen > article {
         display: flex;
@@ -81,6 +82,12 @@
         document.querySelectorAll("button.main_button").forEach(el => {
             el.addEventListener("mouseenter", () => {
                 cursor_snd.cloneNode(1).play()
+            })
+            el.addEventListener("click", (item) => {
+                switch(item.currentTarget.attributes.ac.value){
+                    case "tsklst": alert("buen") ;break;
+                    default: alert("Warning, this button is not bount to a existing function.");break;
+                }
             })
         })
     }

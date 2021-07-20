@@ -1,3 +1,4 @@
+let userdata = window.localStorage
 let task_id = document.getElementById("task_id");
 let task_name = document.getElementById("task_name");
 let timeout_id = 0;
@@ -8,6 +9,10 @@ let cursor_snd = new Audio("sounds/cursor.ogg");
 let back_snd = new Audio("sounds/back.ogg");
 let random_sound = new Audio("sounds/reandomization.mp3")
 random_sound.preservesPitch = false;
+
+if (userdata.getItem("is_donz") == "1"){
+    
+}
 
 let [tasklist, selected] = [{}, {}];
 

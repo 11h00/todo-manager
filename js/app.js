@@ -11,7 +11,10 @@ let random_sound = new Audio("sounds/reandomization.mp3")
 random_sound.preservesPitch = false;
 
 if (userdata.getItem("is_donz") == "1"){
-    
+    el.setAttribute("inactive", "true")
+    document.getElementById("task_choosing").removeAttribute("inactive")
+    task_name.innerText = selected.task;
+    task_id.innerText = selected.id
 }
 
 let [tasklist, selected] = [{}, {}];
@@ -29,9 +32,9 @@ let start_randomizing = () => {
         selected = tasklist.tasks[Math.floor(Math.random() * tasklist.tasks.length)];
         task_name.innerText = selected.task;
         task_id.innerText = selected.id
-
     }, 60);
     setTimeout(() => {
+        document.querySelector("button[ac='back']").setAttribute("inactive", "true")
         if (selected.id == 0){
             random_sound.playbackRate = .82
             task_name.style.color = "darkgray"

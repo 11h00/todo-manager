@@ -42,6 +42,7 @@ let start_randomizing = () => {
             task_id.style.color = "darkgray"
         }
         if (selected.id == 9){
+            already_donz.cloneNode(true).play()
             task_id.style.color = "#00da39";
             task_name.style.color = "#00da39";
         }

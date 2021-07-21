@@ -28,6 +28,5 @@
     {"id": 26, "task": "matashi - add feature for profile viewing"},
     {"id": 27, "task": "other - make commit github lvl livecount"},
     {"id": 28, "task": "livecount - optimize matashi livecount"},
-    {"id": 29, "task": "matashi - chat message"},
-    {"id": 30, "task": "play minecraft"}
+    {"id": 29, "task": "play minecraft"}
 ]}

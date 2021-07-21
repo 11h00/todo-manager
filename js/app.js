@@ -48,6 +48,10 @@ let start_randomizing = () => {
             task_name.style.color = "#00da39";
             setTimeout(() => {
                 back_snd.play()
+                main_screen.removeAttribute("inactive");
+                task_choosing.setAttribute("inactive", "true")
+                task_id.style.color = "gray";
+                task_name.style.color = "gray";
             }, 5000)
         }
         clearInterval(interval_id)

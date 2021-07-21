@@ -41,7 +41,7 @@ let start_randomizing = () => {
             task_name.style.color = "darkgray"
             task_id.style.color = "darkgray"
         }
-        if (selected.id == 9 || selected.id == 16){
+        if (selected.id == 9 || selected.id == 16 || selected.id == 17){
             document.querySelector("button[ac='back']").removeAttribute("inactive")
             already_donz.cloneNode(true).play()
             task_id.style.color = "#00da39";

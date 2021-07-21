@@ -50,6 +50,7 @@ let start_randomizing = () => {
                 back_snd.play()
                 main_screen.removeAttribute("inactive");
                 task_choosing.setAttribute("inactive", "true")
+                document.querySelector("button[ac='back']").setAttribute("inactive", "true")
                 task_id.style.color = "gray";
                 task_name.style.color = "gray";
             }, 5000)

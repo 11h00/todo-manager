@@ -5,6 +5,7 @@ let timeout_id = 0;
 let interval_id = 0;
 let [username, id] = ["", 0] //matashi username if he is logged
 let confirm_snd = new Audio("sounds/confirm.ogg")
+let already_donz = new Audio("sounds/")
 let cursor_snd = new Audio("sounds/cursor.ogg");
 let back_snd = new Audio("sounds/back.ogg");
 let random_sound = new Audio("sounds/reandomization.mp3")

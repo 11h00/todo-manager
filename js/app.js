@@ -42,9 +42,13 @@ let start_randomizing = () => {
             task_id.style.color = "darkgray"
         }
         if (selected.id == 9){
+            document.querySelector("button[ac='back']").removeAttribute("inactive")
             already_donz.cloneNode(true).play()
             task_id.style.color = "#00da39";
             task_name.style.color = "#00da39";
+            setTimeout(() => {
+                back_snd.play()
+            }, 5000)
         }
         clearInterval(interval_id)
     }, 12940);

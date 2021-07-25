@@ -68,11 +68,12 @@ let refresh_button = () => {
             confirm_snd.cloneNode(true).play()
             switch(item.currentTarget.attributes.ac.value){
                 case "tsklst":
+                    document.getElementById('main_screen').setAttribute("inactive", "true")
                     document.querySelector("button[ac='back']").removeAttribute("inactive")
                     create_screen.removeAttribute("inactive")
                     break;
                 case "rand":
-                    main_screen.setAttribute("inactive", "true")
+                    
                     document.querySelector("button[ac='back']").removeAttribute("inactive")
                     start_randomizing();
                     break;

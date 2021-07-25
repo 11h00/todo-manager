@@ -84,6 +84,8 @@ let refresh_button = () => {
                     clearTimeout(timeout_id)
                     document.getElementById('create_screen').setAttribute("inactive", "true")
                     document.getElementById('task_choosing').setAttribute("inactive", "true")
+                    main_screen.removeAttribute("inactive");
+                    document.querySelector("button[ac='back']").setAttribute("inactive", "true")
                 break;
                 default: 
                     alert("Warning, this button is not bount to a existing function.");

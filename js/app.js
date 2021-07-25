@@ -69,9 +69,10 @@ let refresh_button = () => {
             switch(item.currentTarget.attributes.ac.value){
                 case "tsklst":
                     document.querySelector("button[ac='back']").removeAttribute("inactive")
-                    alert("buen");
+                    create_screen.removeAttribute("inactive")
                     break;
                 case "rand":
+                    main_screen.setAttribute("inactive", "true")
                     document.querySelector("button[ac='back']").removeAttribute("inactive")
                     start_randomizing();
                     break;

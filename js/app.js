@@ -80,6 +80,10 @@ let refresh_button = () => {
                     break;
                 case "back":
                     back_snd.cloneNode(true).play()
+                    clearInterval(interval_id)
+                    clearTimeout(timeout_id)
+                    document.getElementById('create_screen').setAttribute("inactive", "true")
+                    document.getElementById('task_choosing').setAttribute("inactive", "true")
                 break;
                 default: 
                     alert("Warning, this button is not bount to a existing function.");

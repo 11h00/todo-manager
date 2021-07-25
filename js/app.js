@@ -65,20 +65,21 @@ let refresh_button = () => {
             cursor_snd.cloneNode(1).play()
         })
         el.addEventListener("click", (item) => {
-            confirm_snd.cloneNode(true).play()
+            
             switch(item.currentTarget.attributes.ac.value){
                 case "tsklst":
+                    confirm_snd.cloneNode(true).play()
                     document.getElementById('main_screen').setAttribute("inactive", "true")
                     document.querySelector("button[ac='back']").removeAttribute("inactive")
                     create_screen.removeAttribute("inactive")
                     break;
                 case "rand":
-                    
+                    confirm_snd.cloneNode(true).play()
                     document.querySelector("button[ac='back']").removeAttribute("inactive")
                     start_randomizing();
                     break;
                 case "back":
-
+                    back_snd.cloneNode(true).play()
                 break;
                 default: 
                     alert("Warning, this button is not bount to a existing function.");
